@@ -48,7 +48,7 @@
               mkdir -p $out/grammars
               mkdir -p $out/queries/roc
 
-              cp *.so $out/grammars
+              cp libtree-sitter-roc.so $out/grammars/roc.so
               cp queries/* $out/queries/roc
 
               runHook postInstall
