@@ -9,5 +9,5 @@ This flake makes it easy for me to rebuild the grammar and pipe the outputs into
 To manually generate the output, use `nix build`.
 
 Current structure of the result:
-- The `queries/` directory is placed into `result/queries/`. (to be copied into `.config/helix/runtime/queries/`).
-- The generated `.so` file is placed into `result/shared_obj/`. (to be copied into `.config/helix/runtime/grammars/`).
+- The `queries/` directory is placed into `result/queries/roc/` (content to be copied into `.config/helix/runtime/queries/roc/`).
+- The generated `.so` file is placed into `result/grammars/` (content to be copied into `.config/helix/runtime/grammars/`).

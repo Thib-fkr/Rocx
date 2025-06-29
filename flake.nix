@@ -24,9 +24,9 @@
       {
         packages = rec {
           queries = tree-sitter-roc.packages.${system}.default;
-          shared_obj = pkgs.stdenv.mkDerivation {
+          grammar = pkgs.stdenv.mkDerivation {
 
-            name = "roc_so_builder";
+            name = "roc_grammar_builder";
 
             src = tree-sitter-roc;
 
@@ -45,17 +45,17 @@
             installPhase = ''
               runHook preInstall
 
-              mkdir -p $out/shared_obj
-              mkdir -p $out/queries
+              mkdir -p $out/grammars
+              mkdir -p $out/queries/roc
 
-              cp *.so $out/shared_obj
-              cp queries/* $out/queries
+              cp *.so $out/grammars
+              cp queries/* $out/queries/roc
 
               runHook postInstall
             '';
           };
 
-          default = shared_obj;
+          default = grammar;
         };
       }
     );
