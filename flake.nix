@@ -17,13 +17,13 @@
       ...
     }:
     flake-utils.lib.eachDefaultSystem (
-      system:
+      new-system:
       let
-        pkgs = import nixpkgs { inherit system; };
+        pkgs = import nixpkgs { system = new-system; };
       in
       {
         packages = rec {
-          queries = tree-sitter-roc.packages.${system}.default;
+          queries = tree-sitter-roc.packages.${new-system}.default;
           grammar = pkgs.stdenv.mkDerivation {
 
             name = "roc_grammar_builder";
